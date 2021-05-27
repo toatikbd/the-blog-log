@@ -22,6 +22,10 @@ Auth::routes(['register'=> false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+
+require 'admin.php';
+
 // Route::get('/add-roles', function () {
 //     $roles = [
 //         ['name' => 'admin', 'guard_name'=>'web'],
@@ -32,4 +36,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //     return "success";
 // });
 
-// Route::view('/backpanel', 'backpanel.dashboard.index');
+
