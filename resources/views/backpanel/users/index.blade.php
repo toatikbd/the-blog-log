@@ -1,6 +1,11 @@
 @extends('backpanel.layouts.master')
 @section('title', 'All Users')
 @section('content')
+    @if(session('success'))
+    <div class="alert alert-success" role="alert">
+        {{ session('success') }}
+      </div>
+    @endif
     <div class="d-flex justify-content-between">
         <a href="{{ route('user.create') }}" class="btn btn-primary rounded">Create User</a>
     </div>
