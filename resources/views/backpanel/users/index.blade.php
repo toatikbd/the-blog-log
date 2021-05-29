@@ -23,14 +23,19 @@
             <td>{{ $user->email }}</td>
             <td>Admin</td>
             <td>
-                <a href="http://" class="btn btn-warning btn-sm rounded" data-toggle="tooltip" data-placement="top" title="Edit this User">
+                <a href="{{ route('user.edit', [$user->id]) }}" class="btn btn-warning btn-sm rounded" data-toggle="tooltip" data-placement="top" title="Edit this User">
                     <i class="material-icons">edit</i>
                     Edit
                 </a>
-                <a href="http://" class="btn btn-danger btn-sm rounded">
-                    <i class="material-icons">delete</i>
-                    Delete
-                </a>
+                <form action="{{ route('user.destroy', [$user->id]) }}" method="POST">
+                    @csrf
+                    @method('delete')
+                    <button type="submit" class="btn btn-danger btn-sm rounded">
+                        <i class="material-icons">delete</i>
+                        Delete
+                    </button>
+                </form>
+                
             </td>
         </tr>
         @empty
