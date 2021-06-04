@@ -5,7 +5,7 @@
         <a href="{{ route('user.index') }}" class="btn btn-primary rounded">All Users</a>
     </div>
     <h2>Create an Users</h2>
-    {{$roles}}
+    {{-- {{$roles}} --}}
     <form accept="{{ route('user.store') }}" method="POST">
         @csrf
         <div class="form-group">

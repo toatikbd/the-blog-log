@@ -20,7 +20,7 @@
             <label for="roles">Roles</label>
             <select id="roles" name="role_id" class="form-control">
                 @foreach($roles as $key => $role)
-                    <option value="{{$role->id}}" @if($role->id === $user->role_id) selected @endif>{{strtoupper($role->name)}}</option>
+                    <option value="{{$role->id}}" @if($role->id === $user->role_id) selected @endif >{{strtoupper($role->name)}}</option>
                 @endforeach
             </select>
         </div>

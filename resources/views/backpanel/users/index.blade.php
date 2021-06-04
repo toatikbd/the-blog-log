@@ -21,7 +21,7 @@
         <tr>
             <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>
-            <td>{{ strtoupper($user->roles[0]->name) }}</td>
+            {{-- <td>{{ strtoupper($user->roles[0]->name) }}</td> --}}
             <td>
                 <a href="{{ route('user.edit', [$user->id]) }}" class="btn btn-warning btn-sm rounded" data-toggle="tooltip" data-placement="top" title="Edit this User">
                     <i class="material-icons">edit</i>
