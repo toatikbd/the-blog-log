@@ -12,6 +12,7 @@
     <h2>All Users</h2>
     <table class="table table-bordered table-hover">
         <tr>
+            <th>User Thum</th>
             <th>User Name</th>
             <th>User Email</th>
             <th>User Role</th>
@@ -19,6 +20,9 @@
         </tr>
         @forelse($users as $key => $user)
         <tr>
+            <td>
+                <img src="{{ $user->avatar }}" alt="{{ $user->name }}" width="75" height="auto">
+            </td>
             <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>
              <td>{{ strtoupper($user->roles[0]->name) }}</td>
@@ -35,7 +39,6 @@
                         Delete
                     </button>
                 </form>
-
             </td>
         </tr>
         @empty

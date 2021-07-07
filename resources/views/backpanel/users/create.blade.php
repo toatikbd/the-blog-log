@@ -6,7 +6,7 @@
     </div>
     <h2>Create an Users</h2>
     {{-- {{$roles}} --}}
-    <form accept="{{ route('user.store') }}" method="POST">
+    <form accept="{{ route('user.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="name">Name</label>
@@ -19,6 +19,10 @@
         <div class="form-group">
             <label for="password">Password</label>
             <input type="password" id="password" name="password" class="form-control" placeholder="enter password">
+        </div>
+        <div class="form-group">
+            <label for="avatar">User Avatar</label>
+            <input type="file" name="avatar" id="avatar" class="form-control">
         </div>
         <div class="form-group">
             <label for="roles">Roles</label>

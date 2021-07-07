@@ -34,11 +34,13 @@ class UserController extends Controller
         // ]);
         // return redirect()->route('user.index')->with('success', $user->name."User creatd successfully");
         $user->assignRole($request->role_id);
+        $user->addMedia($request->avatar)->toMediaCollection('user_avatar');
         return $this->redirectUser($user->name." created Successfully");
     }
 
     public function edit(User $user)
     {
+        // return $user->avatar;
         return view('backpanel.users.edit', compact('user'))
             ->with('roles', $this->roles);
     }

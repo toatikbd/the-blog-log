@@ -5,7 +5,7 @@
         <a href="{{ route('user.index') }}" class="btn btn-primary rounded">All Users</a>
     </div>
     <h2>Edit an Users:: {{ $user->name }}</h2>
-    <form accept="{{ route('user.update', [$user->id]) }}" method="POST">
+    <form accept="{{ route('user.update', [$user->id]) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="form-group">
@@ -15,6 +15,9 @@
         <div class="form-group">
             <label for="email">Email</label>
             <input type="email" id="email" name="email" value="{{ $user->email }}" class="form-control" placeholder="enter email">
+        </div>
+        <div class="form-group">
+            <input type="file" name="avatar" class="form-control-file">
         </div>
         <div class="form-group">
             <label for="roles">Roles</label>
