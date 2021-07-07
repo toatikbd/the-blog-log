@@ -33,7 +33,7 @@ class UserController extends Controller
         //     'password' => bcrypt($request->password)
         // ]);
         // return redirect()->route('user.index')->with('success', $user->name."User creatd successfully");
-        $user->assignRole($request->user_id);
+        $user->assignRole($request->role_id);
         return $this->redirectUser($user->name." created Successfully");
     }
 
@@ -46,7 +46,7 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $user->update($request->all());
-        $user->syncRodes([$request->role_id]);
+        $user->syncRoles([$request->role_id]);
         return $this->redirectUser($user->name." updated Successfully");
     }
 

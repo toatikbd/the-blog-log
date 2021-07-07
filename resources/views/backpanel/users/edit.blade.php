@@ -7,7 +7,7 @@
     <h2>Edit an Users:: {{ $user->name }}</h2>
     <form accept="{{ route('user.update', [$user->id]) }}" method="POST">
         @csrf
-        @method('put')
+        @method('PUT')
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" value="{{ $user->name }}" class="form-control" placeholder="enter name">
@@ -26,8 +26,8 @@
         </div>
         <button type="submit" class="btn btn-primary btn-block rounded">Update User</button>
     </form>
-    
+
 @endsection
 @push('js')
-    
+
 @endpush

@@ -15,21 +15,20 @@
 </head>
 
 <body>
-<div class="wrapper ">
-    <!--side bar area -->
-    @include('backpanel.layouts.sidebar')
-    <div class="main-panel">
-        <!--top bar -->
-        @include('backpanel.layouts.topbar')
-        <div class="content">
-            <div class="container-fluid">
-                <!-- your content here -->
-                @yield('content')
+    <div class="wrapper ">
+        <!--side bar area -->
+        @include('backpanel.layouts.sidebar')
+        <div class="main-panel">
+            <!--top bar -->
+            @include('backpanel.layouts.topbar')
+            <div class="content">
+                <div class="container-fluid">
+                    <!-- your content here -->
+                    @yield('content')
+                </div>
             </div>
+
         </div>
-
     </div>
-</div>
-
 </body>
 </html>
