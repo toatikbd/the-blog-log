@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\User\RoleController;
 use Illuminate\Support\Facades\Route;
 use Spatie\Permission\Models\Role;
 
@@ -22,6 +23,21 @@ Auth::routes(['register'=> true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+
+Route::resource('/backpanel/role', App\Http\Controllers\User\RoleController::class);
+
+
+
+
+
+
+
+
+
+
+
+
 require 'admin.php';
 
 // Route::get('/add-roles', function () {
@@ -33,5 +49,4 @@ require 'admin.php';
 //     $role = Role::insert($roles);
 //     return "success";
 // });
-
 

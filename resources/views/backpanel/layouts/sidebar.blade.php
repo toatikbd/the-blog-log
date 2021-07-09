@@ -9,13 +9,19 @@
     </div>
     <div class="sidebar-wrapper">
         <ul class="nav">
-            <li class="nav-item active  ">
+            <li class="nav-item">
                 <a class="nav-link" href="{{ route('backpanel.dashboard') }}">
                     <i class="material-icons">dashboard</i>
                     <p>Dashboard</p>
                 </a>
             </li>
-            <li class="nav-item active  ">
+            <li class="nav-item {{ Request::is('backpanel/role*') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('role.index') }}">
+                    <i class="material-icons">group_work</i>
+                    <p>Roles</p>
+                </a>
+            </li>
+            <li class="nav-item {{ Request::is('backpanel/user*') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('user.index') }}">
                     <i class="material-icons">face</i>
                     <p>Users</p>
