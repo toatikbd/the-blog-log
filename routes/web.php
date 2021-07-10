@@ -24,20 +24,8 @@ Auth::routes(['register'=> true]);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-
 Route::resource('/backpanel/role', App\Http\Controllers\User\RoleController::class);
-
-
-
-
-
-
-
-
-
-
-
-
+Route::resource('/backpanel/permission', App\Http\Controllers\User\PermissionController::class);
 require 'admin.php';
 
 // Route::get('/add-roles', function () {

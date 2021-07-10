@@ -27,6 +27,12 @@
                     <p>Users</p>
                 </a>
             </li>
+            <li class="nav-item {{ Request::is('backpanel/permission*') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('permission.index') }}">
+                    <i class="material-icons">lock</i>
+                    <p>Permission</p>
+                </a>
+            </li>
             <!-- your sidebar here -->
         </ul>
     </div>
