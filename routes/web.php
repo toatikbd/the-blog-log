@@ -24,7 +24,16 @@ Auth::routes(['register'=> true]);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+Route::get('/backpanel/role{role}/assign-permission',
+    [App\Http\Controllers\User\RoleController::class, 'assignPermissionView'])
+    ->name('role.assign.permission');
+
+Route::post('/backpanel/role{role}/assign-permission',
+    [App\Http\Controllers\User\RoleController::class, 'assignPermission'])
+    ->name('role.store.permission');
+
 Route::resource('/backpanel/role', App\Http\Controllers\User\RoleController::class);
+
 Route::resource('/backpanel/permission', App\Http\Controllers\User\PermissionController::class);
 require 'admin.php';
 

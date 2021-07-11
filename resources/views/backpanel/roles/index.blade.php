@@ -1,11 +1,7 @@
 @extends('backpanel.layouts.master')
 @section('title', 'All Roles')
 @section('content')
-    @if(session('success'))
-    <div class="alert alert-success" role="alert">
-        {{ session('success') }}
-      </div>
-    @endif
+    @include('backpanel.layouts.success')
     <div class="d-flex justify-content-between">
         <a href="{{ route('role.create') }}" class="btn btn-primary rounded">Create Roles</a>
     </div>
@@ -19,10 +15,16 @@
         <tr>
             <td>{{ $role->name }}</td>
             <td>
-                <a href="{{ route('role.edit', [$role->id]) }}" class="btn btn-warning btn-sm rounded" data-toggle="tooltip" data-placement="top" title="Edit this role">
-                    <i class="material-icons">edit</i>
-                    Edit
-                </a>
+                <div class="d-flex">
+                    <a href="{{ route('role.assign.permission', [$role->id]) }}" class="btn btn-success btn-sm rounded" data-toggle="tooltip" data-placement="top" title="Assign Permission">
+                        <i class="material-icons">connect_without_contact</i>
+                        Assign Permission
+                    </a>
+                    <a href="{{ route('role.edit', [$role->id]) }}" class="btn btn-warning btn-sm rounded" data-toggle="tooltip" data-placement="top" title="Edit this role">
+                        <i class="material-icons">edit</i>
+                        Edit
+                    </a>
+                </div>
                 <form action="{{ route('role.destroy', [$role->id]) }}" method="POST">
                     @csrf
                     @method('delete')
