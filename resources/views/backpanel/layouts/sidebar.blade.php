@@ -15,8 +15,8 @@
                     <p>Dashboard</p>
                 </a>
             </li>
-            <li class="nav-item {{ Request::is('backpanel/role*') ? 'active' : '' }}">
-                <a class="nav-link" href="#">
+            <li class="nav-item {{ Request::is('backpanel/category*') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('category.index') }}">
                     <i class="material-icons">all_inbox</i>
                     <p>Categories</p>
                 </a>
