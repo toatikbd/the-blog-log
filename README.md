@@ -64,3 +64,9 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## Use laravel-permission 
 
 ## http://localhost:8000
+
+## php artisan make:model Name -m
+## php artisan make:contraller Folder/Name --resource --moel=Category
+## php artisan make:model Name -mcr
+
+

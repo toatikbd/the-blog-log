@@ -15,6 +15,6 @@ Route::delete('/backpanel/users/{user}/edit', [App\Http\Controllers\User\UserCon
 // User Role
 // Route::resource('/backpanel/role', App\Http\Controllers\User\RoleController::class);
 
-
-
+//Category route
+Route::resource('/backpanel/category', App\Http\Controllers\User\CategoryController::class);
 
