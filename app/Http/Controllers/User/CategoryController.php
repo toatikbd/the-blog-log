@@ -99,12 +99,21 @@ class CategoryController extends Controller
             ->with('categories', Category::onlyTrashed()->get());
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function restoreCategory($id)
     {
         Category::withTrashed()->where('id', $id)->restore();
         return redirect()->route('category.index')
             ->with('success', "Category Restored");
     }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function forceDeleteCategory($id)
     {
         Category::withTrashed()->where('id', $id)->forceDelete();
