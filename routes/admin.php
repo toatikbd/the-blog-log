@@ -16,5 +16,15 @@ Route::delete('/backpanel/users/{user}/edit', [App\Http\Controllers\User\UserCon
 // Route::resource('/backpanel/role', App\Http\Controllers\User\RoleController::class);
 
 //Category route
+Route::get('/backpanel/category/trashed', [App\Http\Controllers\User\CategoryController::class, 'trashCategory'])
+    ->name('category.trash');
+Route::post('/backpanel/category/{category}/restore', [App\Http\Controllers\User\CategoryController::class, 'restoreCategory'])
+    ->name('category.restore');
+Route::delete('/backpanel/category/{category}/delete', [App\Http\Controllers\User\CategoryController::class, 'forceDeleteCategory'])
+    ->name('category.force.delete');
 Route::resource('/backpanel/category', App\Http\Controllers\User\CategoryController::class);
+
+
+
+
 

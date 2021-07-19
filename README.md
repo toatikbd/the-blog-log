@@ -57,16 +57,19 @@ In order to ensure that the Laravel community is welcoming to all, please review
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Atiqur Rahaman
 
 ## Use laravel-permission 
 
 ## http://localhost:8000
 
 ## php artisan make:model Name -m
-## php artisan make:contraller Folder/Name --resource --moel=Category
+## php artisan make:controller Folder/Name --resource --model=Category
 ## php artisan make:model Name -mcr
+
+composer require laravel/helpers
+
+php artisan migrate:rollback --step=1
+
 
 

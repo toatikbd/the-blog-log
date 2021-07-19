@@ -4,6 +4,7 @@
     @include('backpanel.layouts.success')
     <div class="d-flex justify-content-between">
         <a href="{{ route('category.create') }}" class="btn btn-primary rounded">Create Category</a>
+        <a href="{{ route('category.trash') }}" class="btn btn-danger rounded">Trash Category</a>
     </div>
     <h2>All Category</h2>
     <table class="table table-bordered table-hover">
@@ -18,10 +19,6 @@
             <td>{{ $category->slug }}</td>
             <td>
                 <div class="d-flex">
-                    <a href="{{ route('category.assign.permission', [$category->id]) }}" class="btn btn-success btn-sm rounded" data-toggle="tooltip" data-placement="top" title="Assign Permission">
-                        <i class="material-icons">connect_without_contact</i>
-                        Assign Permission
-                    </a>
                     <a href="{{ route('category.edit', [$category->id]) }}" class="btn btn-warning btn-sm rounded" data-toggle="tooltip" data-placement="top" title="Edit this category">
                         <i class="material-icons">edit</i>
                         Edit
