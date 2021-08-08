@@ -17,10 +17,12 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('title', 191);
             $table->foreignId('user_id')->constrained();
+            $table->foreignId('category_id')->constrained();
             $table->mediumText('excerpt')->nullable();
             $table->longText('content')->nullable();
             $table->enum('status', ['publish', 'draft'])->default('publish');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

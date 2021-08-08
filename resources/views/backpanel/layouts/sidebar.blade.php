@@ -21,6 +21,12 @@
                     <p>Categories</p>
                 </a>
             </li>
+            <li class="nav-item {{ Request::is('backpanel/post*') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('post.index') }}">
+                    <i class="material-icons">article</i>
+                    <p>Posts</p>
+                </a>
+            </li>
             <li class="nav-item {{ Request::is('backpanel/role*') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('role.index') }}">
                     <i class="material-icons">group_work</i>

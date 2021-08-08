@@ -25,6 +25,6 @@ Route::delete('/backpanel/category/{category}/delete', [App\Http\Controllers\Use
 Route::resource('/backpanel/category', App\Http\Controllers\User\CategoryController::class);
 
 
-
-
+//post route
+Route::resource('/backpanel/post', App\Http\Controllers\User\PostController::class);
 
