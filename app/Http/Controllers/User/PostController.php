@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('backpanel.posts.create');
+        $categories = Category::all();
+        return view('backpanel.posts.create', compact('categories'));
     }
 
     /**
@@ -82,5 +84,19 @@ class PostController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function trashPost()
+    {
+        //TODO: ALL trashPost
+
+    }
+    public function restorePost($post)
+    {
+        //TODO: RESTORE A SINGLE POST
+    }
+    public function forceDeletePost($post)
+    {
+        //TODO: FORCE DELETE A SINGLE POST
     }
 }

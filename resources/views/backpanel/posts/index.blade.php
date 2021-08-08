@@ -4,7 +4,7 @@
     @include('backpanel.layouts.success')
     <div class="d-flex justify-content-between">
         <a href="{{ route('post.create') }}" class="btn btn-primary rounded">Create Posts</a>
-{{--        <a href="{{ route('post.trash') }}" class="btn btn-danger rounded">Trash Posts</a>--}}
+        <a href="{{ route('post.trash') }}" class="btn btn-danger rounded">Trash Posts</a>
     </div>
     <h2>All Posts</h2>
     <table class="table table-bordered table-hover">

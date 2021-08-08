@@ -26,5 +26,11 @@ Route::resource('/backpanel/category', App\Http\Controllers\User\CategoryControl
 
 
 //post route
+Route::get('/backpanel/post/trashed', [App\Http\Controllers\User\PostController::class, 'trashPost'])
+    ->name('post.trash');
+Route::post('/backpanel/post/{post}/restore', [App\Http\Controllers\User\PostController::class, 'restorePost'])
+    ->name('post.restore');
+Route::delete('/backpanel/post/{post}/delete', [App\Http\Controllers\User\PostController::class, 'forceDeletePost'])
+    ->name('post.force.delete');
 Route::resource('/backpanel/post', App\Http\Controllers\User\PostController::class);
 

@@ -10,18 +10,38 @@
     <form action="{{route('post.store')}}" method="post">
         @csrf
         <div class="form-group">
-            <label for="name">Name</label>
+            <label for="title">Post Title</label>
             <input
-                id="name"
+                id="title"
                 type="text"
                 class="form-control"
-                name="name"
-                placeholder="Enter post Name"
+                name="title"
+                placeholder="Enter post title"
             >
         </div>
+        <div class="form-group">
+            <label for="content">Post Content</label>
+            <textarea name="content" id="content" class="form-control" cols="20" rows="10"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="category_id">Select Category</label>
+            <select name="category_id" id="category_id" class="form-control">
+                <option value="0">Select Category</option>
+                @forelse($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @empty
+                    <option value="0">Category not Found</option>
+                @endforelse
+            </select>
+        </div>
         <button
-            class="btn btn-primary btn-block rounded"
-            type="submit">Save post</button>
+            class="btn btn-primary rounded"
+            type="submit">Save post
+        </button>
+        <button
+            class="btn btn-success rounded"
+            type="submit">Publish Post
+        </button>
     </form>
 @endsection
 @push('js')
