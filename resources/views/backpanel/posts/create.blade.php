@@ -54,6 +54,15 @@
         </button>
     </form>
 @endsection
+@section('script')
+    <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'post_content', {
+            filebrowserUploadUrl: "uploadfile",
+            filebrowserUploadMethod: "form"
+        });
+    </script>
+@endsection
 @push('js')
 
 @endpush
