@@ -38,7 +38,17 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post = Post::create([
+            'title' => $request->title,
+            'content' => $request->post_content,
+            'status' => $request->status,
+            'excerpt' => $request->excerpt,
+            'user_id' => 2,
+            'category_id' => $request->category_id
+        ]);
+
+        return redirect()->route('post.index')
+            ->with('success', "Post added Successfully");
     }
 
     /**

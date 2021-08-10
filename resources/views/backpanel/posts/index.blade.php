@@ -15,7 +15,7 @@
         </tr>
         @forelse($posts as $key => $post)
         <tr>
-            <td>{{ $post->name }}</td>
+            <td>{{ $post->title }}</td>
             <td>{{ $post->slug }}</td>
             <td>
                 <div class="d-flex">

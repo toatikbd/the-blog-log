@@ -20,8 +20,18 @@
             >
         </div>
         <div class="form-group">
-            <label for="content">Post Content</label>
-            <textarea name="content" id="content" class="form-control" cols="20" rows="10"></textarea>
+            <label for="post_content">Post Content</label>
+            <textarea
+                name="post_content"
+                id="post_content"
+                class="form-control"
+                cols="20"
+                rows="10">
+            </textarea>
+        </div>
+        <div class="form-group">
+            <label for="excerpt">Excerpt Content</label>
+            <textarea name="excerpt" id="excerpt" class="form-control" cols="15" rows="5"></textarea>
         </div>
         <div class="form-group">
             <label for="category_id">Select Category</label>
@@ -36,11 +46,11 @@
         </div>
         <button
             class="btn btn-primary rounded"
-            type="submit">Save post
+            type="submit" value="draft" name="status">Save post
         </button>
         <button
             class="btn btn-success rounded"
-            type="submit">Publish Post
+            type="submit" value="publish" name="status">Publish Post
         </button>
     </form>
 @endsection
